@@ -1,2 +1,4 @@
-echo "PRE COMMIT"
+echo "<========= PRE COMMIT CHECK =========>"
+echo "\n"
+
 pnpm lint-staged

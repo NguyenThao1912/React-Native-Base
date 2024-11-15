@@ -16,7 +16,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "prepare": "is-ci || husky install",
-    "postinstall": "patch-package && pnpm prepare"
+    "postinstall": "patch-package && pnpm prepare",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
@@ -99,11 +100,6 @@
       "default",
       "jest-junit"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*": "prettier --write && tsc --noEmit && eslint \"./src\" --fix --color && git add ."

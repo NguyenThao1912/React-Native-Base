@@ -1,3 +1,4 @@
 
 echo "pre commit"
+pnpm lint-staged
 exit 1

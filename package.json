@@ -1,0 +1,110 @@
+{
+  "name": "rn-base",
+  "main": "expo-router/entry",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start:dev": "expo start --dev-client",
+    "start:prebuild": "expo prebuild",
+    "start:prod": "expo start --dev-client --no-dev --minify",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "lint": "tsc --noEmit && eslint \"./src\" --fix --color",
+    "prettier": "prettier --write ./src",
+    "test": "jest --watchAll",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "prepare": "is-ci || husky install",
+    "postinstall": "patch-package && pnpm prepare"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
+    "@react-navigation/native": "^6.0.2",
+    "axios": "^1.7.7",
+    "expo": "~51.0.28",
+    "expo-constants": "~16.0.2",
+    "expo-font": "~12.0.9",
+    "expo-linking": "~6.3.1",
+    "expo-router": "~3.5.23",
+    "expo-secure-store": "~13.0.2",
+    "expo-splash-screen": "~0.27.5",
+    "expo-status-bar": "~1.12.1",
+    "expo-system-ui": "~3.0.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-keychain": "^9.2.0",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-safe-area-context": "4.10.5",
+    "react-native-screens": "3.31.1",
+    "react-native-web": "~0.19.10",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.14.0",
+    "@types/jest": "^29.5.12",
+    "@types/react": "~18.2.45",
+    "@types/react-test-renderer": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
+    "babel-jest": "^29.7.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.12.0",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "jest": "^29.2.1",
+    "jest-expo": "~51.0.3",
+    "patch-package": "^8.0.0",
+    "prettier": "^3.3.3",
+    "react-test-renderer": "18.2.0",
+    "typescript": "~5.3.3",
+    "typescript-eslint": "^8.14.0"
+  },
+  "jest": {
+    "preset": "jest-expo/ios",
+    "setupFilesAfterEnv": [
+      "./jest/jestSetup.js",
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|@discord|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|nanoid|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|normalize-url|react-native-svg|@sentry/.*|sentry-expo|bcp-47-match)"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/src/__tests__/.*/__mocks__",
+      "<rootDir>/src/__e2e__/.*"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --write && tsc --noEmit && eslint \"./src\" --fix --color"
+  }
+}

@@ -1,2 +1,2 @@
+echo "PRE COMMIT"
 pnpm lint-staged
-exit 1

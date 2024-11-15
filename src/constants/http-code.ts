@@ -1,3 +1,1 @@
-export enum xHttpCode {
-
-}
+export enum xHttpCode {}

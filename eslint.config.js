@@ -1,8 +1,8 @@
-import globals from 'globals'
 import pluginJs from '@eslint/js'
-import tseslint from 'typescript-eslint'
 import pluginReact from 'eslint-plugin-react'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -19,6 +19,11 @@ export default [
       'no-var': 0,
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error'
+    },
+    settings: {
+      react: {
+        version: 'detect' // Automatically detect the React version
+      }
     }
   },
   { languageOptions: { globals: globals.node } },

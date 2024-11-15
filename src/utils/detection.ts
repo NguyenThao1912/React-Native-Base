@@ -7,8 +7,8 @@ export const devicePlatform = isIOS ? 'ios' : isAndroid ? 'android' : 'web'
 export const isWeb = !isNative
 export const isMobileWebMediaQuery = 'only screen and (max-width: 1300px)'
 export const isMobileWeb =
-    isWeb &&
-    // @ts-expect-error we know window exists -prf
-    global.window.matchMedia(isMobileWebMediaQuery)?.matches
+  isWeb &&
+  // @ts-expect-error we know window exists -prf
+  global.window.matchMedia(isMobileWebMediaQuery)?.matches
 
 export const isIPhoneWeb = isWeb && /iPhone/.test(navigator.userAgent)

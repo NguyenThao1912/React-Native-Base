@@ -1,4 +1,4 @@
 export interface IApiResponse<T> {
-    data: T
-    total: number
+  data: T
+  total: number
 }

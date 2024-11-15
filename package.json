@@ -15,7 +15,7 @@
     "test": "jest --watchAll",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "prepare": "is-ci || husky install",
+    "prepare": "(is-ci || husky install) && chmod ug+x .husky/*",
     "postinstall": "patch-package && pnpm prepare",
     "lint-staged": "lint-staged"
   },
@@ -102,6 +102,10 @@
     ]
   },
   "lint-staged": {
-    "*": "prettier --write && tsc --noEmit && eslint \"./src\" --fix --color && git add ."
+    "*": [
+      "pnpm prettier",
+      "pnpm lint",
+      "git add ."
+    ]
   }
 }

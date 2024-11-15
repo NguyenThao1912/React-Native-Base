@@ -1,0 +1,1 @@
+echo "export PATH="$(dirname $(which node)):$PATH"" > ~/.huskyrc

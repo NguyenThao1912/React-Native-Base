@@ -100,15 +100,10 @@
       "jest-junit"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm lint-staged"
-    }
-  },
   "lint-staged": {
     "*": [
-      "pnpm prettier",
-      "pnpm lint",
+      "npx prettier",
+      "npx lint",
       "git add ."
     ]
   }

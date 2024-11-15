@@ -1,4 +1,4 @@
 echo "<========= COMMIT MESSAGE CHECK =========>"
 echo "\n"
 
-pnpm dlx commitlint -e -v \$1
+npx commitlint --from HEAD~1 --to HEAD --verbose

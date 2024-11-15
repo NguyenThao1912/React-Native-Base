@@ -3,7 +3,6 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "start:dev": "expo start --dev-client",
     "start:prebuild": "expo prebuild",
@@ -100,6 +99,11 @@
       "default",
       "jest-junit"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm lint-staged"
+    }
   },
   "lint-staged": {
     "*": [

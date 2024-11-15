@@ -1,0 +1,34 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.validate.enable": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wrappingIndent": "same",
+  "editor.wordWrapColumn": 120,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "files.exclude": {
+    // "**/node_modules": true,
+    "nls.*.json": true,
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/**/*.js": {
+      "when": "$(basename).ts"
+    },
+    // "**/out": true,
+    "**/*.js.map": true
+  },
+  "[typescript]": {
+    // Need to install extension 'esbenp.prettier-vscode'
+    //"editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  // "gulp.autoDetect": "on",
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

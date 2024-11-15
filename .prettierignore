@@ -1,0 +1,17 @@
+# Ignore everything except JS-ey or CSS code.
+# Based on https://stackoverflow.com/a/70715829/458193
+*
+!**/*.js
+!**/*.jsx
+!**/*.ts
+!**/*.tsx
+!*/
+!eslint.config.js
+!**/*.css
+
+# More specific ignores go below.
+.expo
+android
+ios
+coverage
+web-build

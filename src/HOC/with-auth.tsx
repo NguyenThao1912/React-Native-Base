@@ -1,4 +1,3 @@
-import { router } from 'expo-router'
 import React, { useEffect } from 'react'
 
 import { useAuth } from '@/context/auth.context'
@@ -13,10 +12,9 @@ const withAuth = <P extends object>(
 
     useEffect(() => {
       if (!isAuthenticated) {
-        router.dismissAll()
-        // router.navigate('')
+        // TODO: HANDLE UNAUTHORIZE
       }
-    }, [isAuthenticated, router])
+    }, [isAuthenticated])
 
     if (!isAuthenticated) {
       return null

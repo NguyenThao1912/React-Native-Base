@@ -4,4 +4,4 @@ echo "<========= COMMIT MESSAGE CHECK =========>"
 
 npx --no -- commitlint --edit ""
 
-echo "<========= COMMIT OK =========>"
+echo "<========= COMMIT CHECK FINISH =========>"

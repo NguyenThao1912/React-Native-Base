@@ -1,10 +1,12 @@
+import { ConfigContext,ExpoConfig } from '@expo/config';
+
 import pkg from './package.json'
-import { ExpoConfig, ConfigContext } from '@expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => {
   /**
-   * App version number. Should be incremented as part of a release cycle. in package.json 
+   * App version number. Should be incremented as part of a release cycle. in package.json
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const VERSION = pkg.version
 
   /**
@@ -12,10 +14,12 @@ export default ({ config }: ConfigContext): ExpoConfig => {
  *
  * @see https://docs.expo.dev/build-reference/variables/#built-in-environment-variables
  */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const PLATFORM = process.env.EAS_BUILD_PLATFORM
 
   const IS_DEV = process.env.EXPO_PUBLIC_ENV === 'development'
   const IS_TESTFLIGHT = process.env.EXPO_PUBLIC_ENV === 'testflight'
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const IS_PRODUCTION = process.env.EXPO_PUBLIC_ENV === 'production'
 
   const ASSOCIATED_DOMAINS = [
@@ -28,7 +32,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ...config,
     ios: {
       supportsTablet: false,
-      bundleIdentifier: 'xyz.blueskyweb.app',
+      bundleIdentifier: process.env.EXPO_PUBLIC_IOS_IDENTIFIER,
       config: {
         usesNonExemptEncryption: false,
       },

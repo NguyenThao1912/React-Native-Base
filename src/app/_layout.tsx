@@ -13,15 +13,12 @@ import { useEffect } from 'react'
 
 import { useColorScheme } from '@/hooks/useColorScheme'
 
-import SpaceMono from '../assets/fonts/SpaceMono-Regular.ttf'
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const colorScheme = useColorScheme()
-  const [loaded] = useFonts({
-    SpaceMono: SpaceMono
-  })
+  const [loaded] = useFonts({})
 
   useEffect(() => {
     if (loaded) {
@@ -36,7 +33,8 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ title: 'Home' }} />
+        <Stack.Screen name="about" options={{ title: 'About' }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

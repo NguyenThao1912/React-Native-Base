@@ -10,6 +10,7 @@
   "editor.wrappingIndent": "same",
   "editor.wordWrapColumn": 120,
   "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": "always",
     "source.fixAll.eslint": "always"
   },
   "files.exclude": {
@@ -29,6 +30,4 @@
     //"editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  // "gulp.autoDetect": "on",
-  "typescript.tsdk": "./node_modules/typescript/lib"
 }

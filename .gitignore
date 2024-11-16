@@ -118,3 +118,5 @@ bskyogcard/src/assets/fonts/noto-*
 
 expo-env.d.ts
 # @end expo-cli
+
+pnpm-lock.yaml
